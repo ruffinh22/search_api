@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <h2>Résultats de la recherche Google</h2>
+    <main>
+        <div class="results-list">
+            <div class="results">
+                {% for result in extracted_results %}
+                    <div class="result-item">
+                        <img src="{{ result.image_url }}" alt="Image associée">
+                        <h2>{{ result.title }}</h2>
+                        <p>{{ result.description }}</p>
+                        <a href="{{ result.link }}" target="_blank">Lien vers la source</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

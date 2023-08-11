@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+
+{% block title %}Facebook Search Results{% endblock %}
+
+{% block content %}
+<h1>Facebook Search Results</h1>
+
+{% if extracted_results %}
+    <ul class="results-list">
+        {% for result in extracted_results %}
+            <li class="result">
+                <strong>Text:</strong> {{ result.text }}<br>
+                <strong>Post URL:</strong> <a href="{{ result.post_url }}">{{ result.post_url }}</a><br>
+                <strong>Time:</strong> {{ result.time }}<br>
+                <strong>Likes:</strong> {{ result.likes }}<br>
+                <strong>Comments:</strong> {{ result.comments }}<br>
+                <strong>Shares:</strong> {{ result.shares }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No results found.</p>
+{% endif %}
+{% endblock %}

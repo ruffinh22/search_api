@@ -1,0 +1,442 @@
+/* styles.css */
+body {
+    position: relative;
+    min-height: calc(100vh - 40px);
+    font-family: Arial, sans-serif;
+    margin: 1;
+    margin-top: 150px; /* Ajouter une marge au-dessous du header */
+    padding: 5;
+    background-color: #f2f2f2;
+}
+
+
+/* CSS pour le header et la navigation */
+header {
+    display: flex;
+    justify-content: space-between; /* Aligner les éléments en même temps à gauche et à droite */
+    align-items: center; /* Centrer verticalement les éléments */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 5px; /* Ajuster le padding vertical et horizontal */
+    transition: transform 0.3s ease;
+  }
+  
+  .logo {
+    margin: 0; /* Supprimer la marge par défaut du h1 */
+    font-size: 24px; /* Ajuster la taille du texte */
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 5px;
+    margin: auto;
+    display: flex; /* Afficher les éléments li en ligne */
+    align-items: center; /* Centrer verticalement les éléments li */
+  }
+  
+  .nav-list li {
+    margin-left: 35px; /* Espacement entre les éléments li */
+    display: inline-block; /* Afficher les éléments li sur la même ligne */
+    align-items: center; /* Centrer verticalement les éléments li */
+
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Ajouter la classe "collapsed" pour l'effet de repli */
+  .collapsed nav {
+    transform: translateY(-100%);
+  }
+  
+  
+  
+  nav {
+    margin-top: 80px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav li {
+    display: inline;
+    margin: 0 15px;
+    color: pink;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px 20px;
+    background-color: #ff66b2;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav a:hover {
+    color: #fff;
+    background-color: #ff3385;
+  }
+  
+  main {
+
+    
+        padding: 20px 0 20px 0; /* Ajouter un espace équivalent à la hauteur du header en haut */
+        text-align: center;
+    
+    
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    
+
+    position: fixed; /* Utiliser position: fixed au lieu de position: absolute */
+    bottom: 0;
+    width: 100%;
+    z-index: 999; /* Ajouter un z-index pour s'assurer que le pied de page reste au-dessus du contenu */
+  }
+  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  button {
+    background-color: pink;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff66b2;
+  }
+  
+
+  /* Ajoutez ce code dans un fichier styles.css */
+
+/* Styles pour la mise en page des résultats */
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .result {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    width: calc(33.33% - 20px); /* 3 résultats par ligne */
+    text-align: center;
+  }
+  
+  .result img {
+    max-width: 20%;
+    height: 20%;
+  }
+  
+  .result h2 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .result p {
+    font-size: 14px;
+  }
+  
+
+  
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+  
+
+  /* CSS spécifique à la page Facebook Search */
+/* Ajoutez ici les styles spécifiques à cette page */
+
+/* Styles pour les formulaires */
+form {
+    margin-bottom: 20px;
+    display: flex;
+    text-align: center;
+    margin: 20px 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 20%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Styles pour les résultats de la recherche */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+p {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Results List Styles */
+.results-list {
+    list-style: none;
+    padding: 0;
+    
+}
+
+.result {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
+
+.result strong {
+    font-weight: bold;
+}
+
+.result a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.result a:hover {
+    text-decoration: underline;
+}
+
+/* No Results Message Styles */
+.no-results {
+    text-align: center;
+    color: #999;
+}
+
+/* Form Styles */
+
+
+form label {
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    padding: 5px;
+}
+
+form input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* Styles pour la liste des résultats */
+
+
+
+.result-item h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.result-item p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.result-item a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.result-item img {
+    max-width: 10%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Results Container Styles */
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Result Item Styles */
+.result-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    width: calc(33.33% - 20px); /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+.result-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.result-info {
+    margin-top: 10px;
+}
+
+.result-info h3 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.result-info p {
+    margin: 5px 0;
+}
+
+.result-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.result-info a:hover {
+    text-decoration: underline;
+}
+
+  /* Autres styles pour le reste de la page... */
+/* Ajoutez ceci à la fin de votre fichier styles.css */
+
+/* Styles pour la section de description */
+.description {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+}
+
+.description p {
+    margin-bottom: 0;
+    flex: 1;
+}
+
+/* Styles pour le conteneur de la description */
+.description-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}

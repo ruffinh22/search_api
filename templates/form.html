@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+{% block title %}Facebook Search{% endblock %}
+
+{% block content %}
+<h1>Facebook Search</h1>
+<form method="post" action="/facebook">
+    <label for="sector">Sector:</label>
+    <input type="text" name="sector" id="sector">
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location">
+    <input type="submit" value="Search">
+</form>
+
+{% if extracted_results %}
+    <h2>Search Results:</h2>
+    <ul>
+        {% for result in extracted_results %}
+            <li>
+                <strong>Text:</strong> {{ result.text }}<br>
+                <strong>Post URL:</strong> <a href="{{ result.post_url }}">{{ result.post_url }}</a><br>
+                <strong>Time:</strong> {{ result.time }}<br>
+                <strong>Likes:</strong> {{ result.likes }}<br>
+                <strong>Comments:</strong> {{ result.comments }}<br>
+                <strong>Shares:</strong> {{ result.shares }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

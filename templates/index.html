@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recherche et Stockage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Recherche et Stockage</h1>
+
+        <!-- Google Search Form -->
+        <form method="post">
+            {{ google_form.hidden_tag() }}
+            {{ google_form.query.label }}
+            {{ google_form.query() }}
+            {{ google_form.sector.label }}
+            {{ google_form.sector() }}
+            {{ google_form.location.label }}
+            {{ google_form.location() }}
+            {{ google_form.submit() }}
+        </form>
+
+        <!-- Facebook Search Form -->
+        <form method="post">
+            {{ facebook_form.hidden_tag() }}
+            {{ facebook_form.query.label }}
+            {{ facebook_form.query() }}
+            {{ facebook_form.sector.label }}
+            {{ facebook_form.sector() }}
+            {{ facebook_form.location.label }}
+            {{ facebook_form.location() }}
+            {{ facebook_form.submit() }}
+        </form>
+
+
+        <!-- Display Search Results -->
+        <h2>Résultats de recherche</h2>
+        <ul class="results-list">
+            {% for result in search_results %}
+                <li class="result-item">
+                    <h3><a href="{{ result.result_link }}">{{ result.result_title }}</a></h3>
+                    <p>{{ result.result_link }}</p>
+                </li>
+            {% endfor %}
+            {% if not search_results %}
+                <li class="no-results">Aucun résultat trouvé.</li>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>

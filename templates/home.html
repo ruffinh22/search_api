@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Votre Application de Recherche</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1 class="logo">Votre Application de Recherche</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="{{ url_for('search_facebook') }}">Recherche Facebook</a></li>
+        <li><a href="{{ url_for('search_google') }}">Recherche Google</a></li>
+        <li><a href="{{ url_for('show_results') }}">Résultats de Recherche</a></li>
+        
+
+        <!-- Ajoutez plus de liens au besoin -->
+      </ul>
+    </nav>
+  </header>
+
+  <div class="description-container">
+    <section class="description">
+        <p>Bienvenue sur 'Votre Application de Recherche' ! Notre application est conçue pour vous aider à trouver rapidement et efficacement des informations. Que vous recherchiez des articles, des images ou des vidéos, notre moteur de recherche puissant parcourt le web pour vous apporter des résultats pertinents en un instant. Avec des fonctionnalités conviviales et une interface propre, 'Votre Application de Recherche' rend la recherche facile. Essayez-la dès maintenant et découvrez une façon plus intelligente de trouver des informations.</p>
+    </section>
+  </div>
+  
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Votre Application de Recherche<br>Merci d'utiliser 'Votre Application de Recherche' !
+      Recherchez, Explorez, Découvrez - le tout en un seul endroit.
+      Pour toute assistance, veuillez contacter support@votreapplicationderecherche.com.</p>
+  </footer>
+</body>
+</html>

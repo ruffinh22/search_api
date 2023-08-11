@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats de la recherche</title>
+</head>
+<body>
+    <h1>Résultats de la recherche</h1>
+    <ul>
+        {% for result in extracted_results %}
+            <li>
+                <h2>{{ result.title }}</h2>
+                <p>{{ result.description }}</p>
+                <a href="{{ result.link }}" target="_blank">Lien vers la source</a>
+                {% if result.image_url %}
+                    <img src="{{ result.image_url }}" alt="Image associée">
+                {% else %}
+                    <p>Pas d'image disponible</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

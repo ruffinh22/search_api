@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <h1>Résultats de recherche</h1>
+    <div class="results-container">
+        {% for result in results %}
+            <div class="result-item">
+                <img src="{{ result.image_url }}" alt="Image">
+                <div class="result-info">
+                    <h3>{{ result.title }}</h3>
+                    <p><a href="{{ result.link }}" target="_blank">{{ result.link }}</a></p>
+                    <p>{{ result.description }}</p>
+                </div>
+                <form method="post" action="{{ url_for('delete_result', result_id=result.id) }}">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <form method="post" action="{{ url_for('delete_all') }}">
+        <button type="submit">Supprimer tous</button>
+    </form>
+{% endblock %}
