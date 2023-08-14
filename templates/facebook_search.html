@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Facebook Search</h1>
-  <form method="POST" action="{{ url_for('facebook_search') }}">
+  <form method="POST" action="{{ url_for('search_facebook') }}">
     {{ facebook_form.hidden_tag() }}
     <div>
       {{ facebook_form.query.label }}

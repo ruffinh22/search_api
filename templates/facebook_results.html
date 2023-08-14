@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+{% block content %}
+  <h1>Résultats de recherche sur Facebook</h1>
+  <div class="results-container">
+    {% if error_message %}
+      <p class="error-message">{{ error_message }}</p>
+    {% else %}
+      {% for result in extracted_results %}
+        <div class="result-item">
+          <div class="result-info">
+            <img src="{{ result.image_url }}" alt="Image associée">
+            <h3>{{ result.title }}</h3>
+            <p>{{ result.description }}</p>
+
+            <p>{{ result.text }}</p>
+            <a href="{{ result.link }}" target="_blank">Lien vers la facebook</a>
+            <p>Date de création : {% if result.created_time %}{{ result.created_time.strftime('%d/%m/%Y %H:%M:%S') }}{% else %}N/A{% endif %}</p>
+            <p>Likes : {{ result.likes }}</p>
+            <p>Commentaires : {{ result.comments }}</p>
+            <p>Partages : {{ result.shares }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}

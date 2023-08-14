@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+
+{% block content %}
+  <h1>Recherche sur Facebook</h1>
+  <div class="search-form">
+    <form method="post" action="{{ url_for('search_facebook') }}">
+      <label for="sector">Secteur :</label>
+      <input type="text" id="sector" name="sector" required>
+      <label for="location">Localisation :</label>
+      <input type="text" id="location" name="location" required>
+      <button type="submit">Rechercher</button>
+    </form>
+    {% if error_message %}
+      <p class="error-message">{{ error_message }}</p>
+    {% endif %}
+  </div>
+{% endblock %}

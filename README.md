@@ -19,6 +19,7 @@ Bienvenue dans votre application de recherche personnalisée. Cette application 
 
 ```sh
 
+
 virtualenv venv
 source venv/bin/activate
 
@@ -27,7 +28,25 @@ source venv/bin/activate
 
  `pip install -r requirements.txt`
 
-5. Exécutez l'application : 
+
+
+5. Configurez la Base de Données MySQL :
+
+Assurez-vous d'avoir MySQL Server installé et en cours d'exécution sur votre machine.
+Dans fabfile.py, configurez les paramètres de connexion à la base de données.
+
+6. Effectuez les migrations de la base de données :
+
+```sh
+Copy code
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+
+```
+
+7. Exécutez l'application : 
+
 
 `python app.py`
 
