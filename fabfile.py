@@ -10,7 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 app = Flask(__name__, static_url_path='/static')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:janvier22@localhost/searchs'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost/db_name'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'your-secret-key'
 app.config["SQLALCHEMY_ECHO"] = True
